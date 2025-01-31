@@ -1,12 +1,12 @@
 <img src="preview/view.png">
 
-### [Click_FM](https://click-fm.vercel.app/) - online radio player ###
+### [LuxeRadio](https://luxeradio.vercel.app/) - online radio player ###
 
 ```
 Features
 ```
 
-- Online radio stations presents
+- Online radio station
 - 100% Responsive Design
 - Grid
 - SVG icons 
