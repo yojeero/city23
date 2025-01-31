@@ -6,10 +6,8 @@
 Features
 ```
 
-- online radio stations presents
+- Online radio stations presents
 - 100% Responsive Design
 - Grid
 - SVG icons 
-- Google Fonts
-
--- All images and icons are for demonstration purposes only --
+- Optimized for speed
