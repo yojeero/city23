@@ -1,6 +1,6 @@
 <img src="preview/view.png">
 
-### [Click_FM](https://click.vercel.app/) - online radio player ###
+### [Click_FM](https://click-fm.vercel.app/) - online radio player ###
 
 ```
 Features
