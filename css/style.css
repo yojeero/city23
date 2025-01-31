@@ -50,14 +50,6 @@ body
 	place-content : center;
 }
 
-.player:hover
-{
-	cursor : pointer;
-	transition : 1s ease;
-
-	background: linear-gradient(to right top, #fefffa10, #cfd4c620);
-}
-
 .play , .pause
 {
 	display : grid;
