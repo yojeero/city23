@@ -88,9 +88,9 @@ body
 
 	color : var(--icons);
 
-	/* margin: auto; */
+	margin: auto;
 
-	place-self : center;
+	/* place-self : center; */
 }
 
 
