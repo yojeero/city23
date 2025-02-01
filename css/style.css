@@ -76,23 +76,20 @@ body
 	place-content : center;
 }
 
-.play svg, .pause svg
+.play svg ,
+.pause svg
 {
 	display : grid;
 
 	width : 8rem;
 	height : 8rem;
+	margin : auto;
 
 	cursor : pointer;
 	transition : 1s ease;
 
 	color : var(--icons);
-
-	margin: auto;
-
-	/* place-self : center; */
 }
-
 
 .play svg:hover, .pause svg:hover
 {
@@ -110,7 +107,8 @@ body
 .audio-info
 {
 	display : grid;
-	place-self : center;	
+
+	margin : auto;
 }
 
 .audio-info:hover
