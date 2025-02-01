@@ -193,4 +193,13 @@ body
 		text-align : center;
 	}
 
+<<<<<<< HEAD
 }
+=======
+	.audio-info .genre
+	{
+		font-size : 2rem;
+	}
+
+}
+>>>>>>> 3bde21cbd8364d5b275273e152d48372f65ac540
