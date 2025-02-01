@@ -4,76 +4,73 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Click Player</title>
+  <title>Luxe Radio</title>
 
-	 <!-- style CSS -->
-	 <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="online radio" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="icon" type="image/svg+xml" href="images/fav.svg">
+
+  <!-- style CSS -->
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
-<!-- loader -->
-	<div class="loader">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-			<rect fill="none" stroke="currentColor" stroke-width="4" x="25" y="25" width="50" height="50">
-				<animateTransform attributeName="transform" dur="0.5s" from="0 50 50" to="180 50 50" type="rotate"
-					id="strokeBox" attributeType="XML" begin="rectBox.end" />
-			</rect>
-			<rect x="27" y="27" fill="currentColor" width="46" height="50">
-				<animate attributeName="height" dur="1.3s" attributeType="XML" from="50" to="0" id="rectBox" fill="freeze"
-					begin="0s;strokeBox.end" />
-			</rect>
-		</svg>
-	</div><!-- end loader -->
+  <!-- loader -->
+  <div class="loader">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" enable-background="new 0 0 100 100"
+      xml:space="preserve">
+      <rect fill="none" stroke="currentColor" stroke-width="4" x="25" y="25" width="50" height="50">
+        <animateTransform attributeName="transform" dur="0.5s" from="0 50 50" to="180 50 50" type="rotate"
+          id="strokeBox" attributeType="XML" begin="rectBox.end" />
+      </rect>
+      <rect x="27" y="27" fill="currentColor" width="46" height="50">
+        <animate attributeName="height" dur="1.3s" attributeType="XML" from="50" to="0" id="rectBox" fill="freeze"
+          begin="0s;strokeBox.end" />
+      </rect>
+    </svg>
+  </div><!-- end loader -->
 
-    <div class="player">
+  <div class="player">
 
     <audio class="music" preload="auto">
-       <source src="https://live.stream.maxfive.com/max5-city23/stream/mp3">
+      <source src="https://live.stream.maxfive.com/max5-city23/stream/mp3">
     </audio>
 
     <div class="play" onclick="handlePlay()">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-			<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-				color="currentColor">
-				<path
-					d="M14.953 12.395c-.151.627-.867 1.07-2.3 1.955c-1.383.856-2.075 1.285-2.633 1.113a1.4 1.4 0 0 1-.61-.393C9 14.62 9 13.746 9 12s0-2.62.41-3.07c.17-.186.38-.321.61-.392c.558-.173 1.25.256 2.634 1.112c1.432.886 2.148 1.329 2.3 1.955a1.7 1.7 0 0 1 0 .79" />
-				<path
-					d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12" />
-			</g>
-		</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+          color="currentColor">
+          <path
+            d="M14.953 12.395c-.151.627-.867 1.07-2.3 1.955c-1.383.856-2.075 1.285-2.633 1.113a1.4 1.4 0 0 1-.61-.393C9 14.62 9 13.746 9 12s0-2.62.41-3.07c.17-.186.38-.321.61-.392c.558-.173 1.25.256 2.634 1.112c1.432.886 2.148 1.329 2.3 1.955a1.7 1.7 0 0 1 0 .79" />
+          <path
+            d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12" />
+        </g>
+      </svg>
     </div>
 
     <div class="audio-info">
 
       <p>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
           stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9" />
-          <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5" />
-          <circle cx="12" cy="12" r="2" />
-          <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" />
-          <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19" />
+          <path d="M2 10v3" />
+          <path d="M6 6v11" />
+          <path d="M10 3v18" />
+          <path d="M14 8v7" />
+          <path d="M18 5v13" />
+          <path d="M22 10v3" />
         </svg>
 
-		<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-			<g fill="none" stroke="currentColor" stroke-width="1.5">
-				<path d="M9 10a3 3 0 1 1 6 0v3a3 3 0 1 1-6 0z" />
-				<path stroke-linecap="round" d="M13 10h2m-2 3h2m-6-3h1m-1 3h1" opacity=".5" />
-				<path d="M4.154 16C5.174 16 6 15.173 6 14.154V10a6 6 0 1 1 12 0v4.154c0 1.02.826 1.846 1.846 1.846"
-					opacity=".5" />
-				<path d="M2 12a2 2 0 1 1 4 0v2a2 2 0 1 1-4 0zm16 0a2 2 0 1 1 4 0v2a2 2 0 1 1-4 0z" />
-				<path stroke-linecap="round" d="M12 16v3" opacity=".75" />
-			</g>
-		</svg> -->
+        CITY<span class="top-radio">23.</span>
+      </p>
 
-        CITY23</p>
-
-         <p class="genre">Premium Radio</p>
+      <p class="genre">Premium <span class="top-letter"> R </span>adio</p>
 
     </div>
 
@@ -83,32 +80,33 @@
   <script>
     setTimeout(function () { document.querySelector(".loader").style.display = "none"; }, 100);
   </script>
-  
-  <!-- vanilla audio player -->   
-   <script>
+
+  <!-- vanilla audio player -->
+  <script>
     var music = document.querySelector('.music')
     var playBtn = document.querySelector('.play')
 
     function handlePlay() {
       if (music.paused) {
-      music.play();
-      playBtn.classList.remove('play');
-      playBtn.classList.add('pause');
-	  playBtn.innerHTML = "<svg viewBox='0 0 24 24'><path fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M4 12c0-3.28 0-4.919.814-6.081a4.5 4.5 0 0 1 1.105-1.105C7.08 4 8.72 4 12 4s4.919 0 6.081.814a4.5 4.5 0 0 1 1.105 1.105C20 7.08 20 8.72 20 12s0 4.919-.814 6.081a4.5 4.5 0 0 1-1.105 1.105C16.92 20 15.28 20 12 20s-4.919 0-6.081-.814a4.5 4.5 0 0 1-1.105-1.105C4 16.92 4 15.28 4 12' color='currentColor'/></svg>";
+        music.play();
+        playBtn.classList.remove('play');
+        playBtn.classList.add('pause');
+        playBtn.innerHTML = "<svg viewBox='0 0 24 24'><path fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M4 12c0-3.28 0-4.919.814-6.081a4.5 4.5 0 0 1 1.105-1.105C7.08 4 8.72 4 12 4s4.919 0 6.081.814a4.5 4.5 0 0 1 1.105 1.105C20 7.08 20 8.72 20 12s0 4.919-.814 6.081a4.5 4.5 0 0 1-1.105 1.105C16.92 20 15.28 20 12 20s-4.919 0-6.081-.814a4.5 4.5 0 0 1-1.105-1.105C4 16.92 4 15.28 4 12' color='currentColor'/></svg>";
       } else {
-      music.pause();
-      playBtn.classList.remove('pause');
-      playBtn.classList.add('play');
-	  playBtn.innerHTML = '<svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor"><path d="M14.953 12.395c-.151.627-.867 1.07-2.3 1.955c-1.383.856-2.075 1.285-2.633 1.113a1.4 1.4 0 0 1-.61-.393C9 14.62 9 13.746 9 12s0-2.62.41-3.07c.17-.186.38-.321.61-.392c.558-.173 1.25.256 2.634 1.112c1.432.886 2.148 1.329 2.3 1.955a1.7 1.7 0 0 1 0 .79"/><path d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12"/></g></svg>';
+        music.pause();
+        playBtn.classList.remove('pause');
+        playBtn.classList.add('play');
+        playBtn.innerHTML = '<svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor"><path d="M14.953 12.395c-.151.627-.867 1.07-2.3 1.955c-1.383.856-2.075 1.285-2.633 1.113a1.4 1.4 0 0 1-.61-.393C9 14.62 9 13.746 9 12s0-2.62.41-3.07c.17-.186.38-.321.61-.392c.558-.173 1.25.256 2.634 1.112c1.432.886 2.148 1.329 2.3 1.955a1.7 1.7 0 0 1 0 .79"/><path d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12"/></g></svg>';
       }
       music.addEventListener('ended', function () {
-      playBtn.classList.remove('pause');
-      playBtn.classList.add('play');	  
-	  playBtn.innerHTML = '<svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor"><path d="M14.953 12.395c-.151.627-.867 1.07-2.3 1.955c-1.383.856-2.075 1.285-2.633 1.113a1.4 1.4 0 0 1-.61-.393C9 14.62 9 13.746 9 12s0-2.62.41-3.07c.17-.186.38-.321.61-.392c.558-.173 1.25.256 2.634 1.112c1.432.886 2.148 1.329 2.3 1.955a1.7 1.7 0 0 1 0 .79"/><path d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12"/></g></svg>';
-      music.currentTime = 0;
+        playBtn.classList.remove('pause');
+        playBtn.classList.add('play');
+        playBtn.innerHTML = '<svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor"><path d="M14.953 12.395c-.151.627-.867 1.07-2.3 1.955c-1.383.856-2.075 1.285-2.633 1.113a1.4 1.4 0 0 1-.61-.393C9 14.62 9 13.746 9 12s0-2.62.41-3.07c.17-.186.38-.321.61-.392c.558-.173 1.25.256 2.634 1.112c1.432.886 2.148 1.329 2.3 1.955a1.7 1.7 0 0 1 0 .79"/><path d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12"/></g></svg>';
+        music.currentTime = 0;
       });
     }
-    </script>
+  </script>
 
 </body>
-</html>       
+
+</html>
