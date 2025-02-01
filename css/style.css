@@ -156,6 +156,12 @@ body
 	font-size : 2.625rem;
 }
 
+.about
+{
+	display: grid;
+	justify-content : center; 
+}
+
 /* loader */ 
 .loader { position : absolute; z-index : 9999; top : 0; right : 0; bottom : 0; left : 0; display : flex; align-items : center; justify-content : center; margin : auto; background : #6a994e; }
 
@@ -193,13 +199,4 @@ body
 		text-align : center;
 	}
 
-<<<<<<< HEAD
 }
-=======
-	.audio-info .genre
-	{
-		font-size : 2rem;
-	}
-
-}
->>>>>>> 3bde21cbd8364d5b275273e152d48372f65ac540

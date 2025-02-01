@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 15px;
+    height: 100vh;
+    background-color: #ff8642;
+    background-image: linear-gradient(62deg, #ff8642 0%, #ffd15e 100%);
+}
+
+h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+canvas {
+    width: 500px;
+    max-width: 90vw;
+    border-radius: 16px;
+    box-shadow: 0px 0px 40px 3px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(#673ab7, #512da8);
+}
