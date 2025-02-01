@@ -11,13 +11,12 @@
 
 	--bg-desktop : url(../images/dog.svg) no-repeat bottom left / 20%, url(../images/train.svg) no-repeat bottom right / 25%;
 
-	--bg-mobile : url(../images/walk.svg) no-repeat bottom center / 90%, url(../images/city23.svg) no-repeat top 50px center / 50%; 
+	--bg-mobile : url(../images/walk.svg) no-repeat bottom center / 30%, url(../images/city23.svg) no-repeat top 50px center / 50%; 
 
 	--icons : #737373;
 	--icons-hover : #d6d3d1;
 	--text : #fafafa;
 	/* --text : #171717; */
-
 
 @font-face
 {
