@@ -67,7 +67,6 @@ body
 	height : 50vh;
 
 	margin : auto;
-	padding : 6rem;
 
 	border : 1px solid var(--icons);
 	border-radius : 6px;
@@ -88,6 +87,8 @@ body
 	transition : 1s ease;
 
 	color : var(--icons);
+
+	/* margin: auto; */
 
 	place-self : center;
 }
