@@ -13,10 +13,9 @@
 
 	--bg-mobile : url(../images/walk.svg) no-repeat bottom center / 30%, url(../images/city23.svg) no-repeat top 50px center / 50%; 
 
-	--icons : #737373;
-	--icons-hover : #d6d3d1;
+	--icons : #a8a29e;
+	--icons-hover : #e5e5e5;
 	--text : #fafafa;
-	/* --text : #171717; */
 
 @font-face
 {
@@ -78,7 +77,7 @@ body
 	place-content : center;
 }
 
-.play , .pause
+.play svg, .pause svg
 {
 	display : grid;
 
@@ -93,7 +92,8 @@ body
 	place-self : center;
 }
 
-.play:hover, .pause:hover
+
+.play svg:hover, .pause svg:hover
 {
 	width : 7rem;
 	height : 7rem;
