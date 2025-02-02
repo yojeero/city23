@@ -10,5 +10,7 @@ Features
 - 100% Responsive Design
 - Grid
 - SVG icons 
+- SVG animation
 - Optimized for speed
+- Made with love in Vienna
 
