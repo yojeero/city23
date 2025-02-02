@@ -142,6 +142,7 @@ body
 	display : grid;
 
 	text-align : right;
+	pointer-events : none;
 
 	grid-area : info;
 	place-content : center;
@@ -155,6 +156,8 @@ body
 	font-size : 3rem;
 	font-variant : small-caps;
 	line-height : 40px;
+
+	pointer-events : none;
 }
 
 .top-radio
@@ -168,7 +171,10 @@ body
 {
 	font-size : 2.625rem;
 	line-height : 40px;
+
+	pointer-events : none;
 }
+
 
 .top-letter
 {
@@ -200,7 +206,7 @@ body
 
 /* responsive */
 
-@media screen and (max-width: 64rem )
+@media screen and (max-width: 64rem)
 {
 
 	body
@@ -216,24 +222,11 @@ body
 	height : 90dvh;
 
 	margin : auto;
-	padding : 4rem;
 
 	border : none;
 	background : none;
 
 	grid-template-columns : 1fr;
 }
-
-
-.audio-info svg
-{
-	margin : 0;
-}
-
-.audio-info p
-{
-	text-align : center;
-}
-
 
 }
