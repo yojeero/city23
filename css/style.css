@@ -74,16 +74,17 @@ body
 	margin : auto;
 	padding : 8em 16em;
 
+	border : 1px solid rgba(255, 255, 255, 0.4);
 	border-radius : 6px;
-	border : 1px solid #fafafa;
+	background : rgba(255, 255, 255, .1);
 
-	grid-template-areas : 
-	'wave wave'
+	grid-template-areas : 'wave wave'
 	'play info';
 	grid-template-columns : auto auto;
 	grid-template-rows : auto auto;
 	place-content : center;
 }
+
 
 .wave
 {
@@ -215,6 +216,7 @@ body
 {
 	height : 90vh;
 	border : none;
+	background : none;
 
 	grid-template-columns : 1fr;
 }
