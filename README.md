@@ -1,10 +1,6 @@
-<img src="preview/view.png">
+<img src="preview/git.png">
 
-### [LuxeRadio](https://luxeradio.vercel.app/) - online radio player ###
-
-```
-Features
-```
+### [LuxeRadio](https://luxeradio.vercel.app/) - online radio player
 
 - Online radio station
 - 100% Responsive Design
@@ -13,4 +9,3 @@ Features
 - SVG animation
 - Optimized for speed
 - Made with love in Vienna
-
