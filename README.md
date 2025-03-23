@@ -1,6 +1,6 @@
 <img src="preview/git.png">
 
-### [city23](https://city23.vercel.app/) - PWA app for Vienna radio by city23.at
+### [city23](https://city23.vercel.app/) - PWA online radio app
 
 - PWA radio app 
 - Can be install on any mobile devices or desktop
