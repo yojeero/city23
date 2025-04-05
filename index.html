@@ -7,12 +7,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>city23 FM</title>
+  <title>city23 fm</title>
 
-  <meta name="description" content="online radio, city23, vienna, radio" />
+  
+  <meta name="keywords"
+    content="City23, Radiosender Wien, chill out, lounge, EDM, Pop, Nu Disco, Soul, RnB, relax, entspannt, urban, house, digital radio, online, music for shopping, bars, restaurants, workout, DAB+ Österreich, good vibes, Vienna, online radio, Webradio">
+  
+  <meta name="description" content="Jetzt hören auf DAB+, via App, Smartspeaker und weltweit online - city23.at Good Vibes only - Premium-Pop , Nu-Disco, Chill Out, Lounge, House, Soul, R‘n‘B">
+  
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-  <link rel="icon" type="svg+xml" href="./images/fav.svg">
+  <link rel="icon" href="./images/fav.svg" type="svg+xml" sizes="any">
+  <link rel="apple-touch-icon" href="./images/icons/apple-touch-icon.png"> 
 
   <!-- for PWA -->
   <link rel="manifest" href="manifest.json" />
@@ -32,18 +38,15 @@
 
     <!-- PAGE -->
          
-<main class="grid size-full text-slate-700 content-end lg:content-center 
-lg:justify-self-center">            
+    <main class="grid size-full text-slate-700 content-end lg:content-center 
+    lg:justify-self-center lg:pt-[20em]">            
 
-  <div class="grid w-full max-w-3xl m-auto lg:shadow-md lg:rounded-3xl">              
-  <!-- <div class="grid w-full max-w-3xl m-auto bg-stone-100 shadow-md rounded-3xl">               -->
+<div class="grid w-full max-w-3xl m-auto lg:border-1 lg:border-stone-200 lg:rounded-3xl">    
 
     <!-- SHOT -->
-    <div class="grid h-full w-full place-content-start overflow-hidden 
-    lg:rounded-t-3xl lg:border-1 lg:border-white lg:max-h-[420px] bg-stone-100">
-    
-      <img class="object-cover min-h-[420px] w-3xl" src="./images/red.svg" 
-      alt="">    
+    <div class="grid h-full w-full place-content-start overflow-hidden lg:rounded-t-3xl lg:border-1 lg:border-white lg:max-h-[420px] bg-stone-100/90">   
+
+      <img class="object-cover w-full" src="./images/paint.png" alt="">         
 
     </div>
 
@@ -79,7 +82,7 @@ lg:justify-self-center">
 
           </div>     
             
-          <div id="waveIcon" class="grid pointer-events-none place-content-center place-items-center text-slate-500">
+          <div id="waveIcon" class="grid pointer-events-none place-content-center place-items-center text-stone-500">
 
             <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
@@ -124,7 +127,8 @@ lg:justify-self-center">
     setTimeout(function () {
      document.querySelector(".loader").style.display = "none";
      }, 100);
-   </script>  
+   </script>
+  
 
   <!-- vanilla audio player -->
 <script>

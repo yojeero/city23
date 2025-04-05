@@ -1,9 +1,10 @@
 <img src="preview/git.png">
 
-### [city23](https://city23.vercel.app/) - PWA online radio app
+### [city23 Radio](https://city23.vercel.app/) - Radio App PWA
 
-- PWA radio app 
-- Can be install on any mobile devices or desktop
+- Radio App PWA 
+- Online radio station
+- 100% Responsive Design
 - Tailwind CSS v4
 - HTML5, CSS3
 - Inline SVG icons 
