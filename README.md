@@ -1,12 +1,59 @@
-<img src="preview/git.png">
+<img src="preview/laptop_city23.jpg" width="830" >
 
-### [city23 Radio](https://city23fm.vercel.app/) - Radio App PWA
+#### [city23 FM](https://city23fm.vercel.app/) - Radio app
 
-- Radio App PWA 
-- Online radio station
+- PWA app
 - 100% Responsive Design
 - Tailwind CSS v4
 - HTML5, CSS3
 - Inline SVG icons 
 - Local Google Fonts
-- Fully responsive layout
+
+#### Project structure
+
+- `scr` folder for development
+- `public` folder for production deploy
+- `preview` for look
+- `city23_app_icons` for PWA icons rebuild in TIFF layers
+
+#### Build and deploy
+
+- used Tailwind v4 + Vite + pnpm
+- in src folder open terminal or   
+- in VSCode add folder 'src' in project and open terminal in VSCode   
+- run in terminal   
+
+``` 
+    - pnpm install 
+    - will be installing dependencies from `package.json` file
+
+        dependencies:
+        + @tailwindcss/vite 4.1.18
+        + tailwindcss 4.1.18
+
+        devDependencies:
+        + vite 7.2.7
+        + vite-plugin-static-copy 3.1.4
+
+    - if you need - change file - vite.config.js
+    - pnpm run dev
+``` 
+
+Now in terminal will be link for open project in Live Server   
+
+... Like this ➜ Local: http://localhost:5173/
+... Hold down the left CTRL + click on Link (http://localhost:5173/ or any other)
+
+After making changes in PWA - save and run
+
+```
+        - npx vite build or pnpm run build  
+        - after that all files will be in the public folder and ready for production
+```
+
+PS:   
+
+... Do not delete @import "tailwindcss" in `input.css` in `src/css/` folder.  
+... Do not delete - import `../css/style` in `main.js` in `src/js/` folder.
+
+Have fun!
