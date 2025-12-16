@@ -1,54 +1,28 @@
+/* eslint-disable no-undef */
+self.skipWaiting()
+self.addEventListener('activate', e => e.waitUntil(self.clients.claim()))
+
 const CACHE_NAME = 'city23-cache-v1'
 
-const BASE = self.location.origin +
-  self.location.pathname.replace(/[^/]+$/, '')
+self.addEventListener('activate', async () => {
+  const keys = await caches.keys()
+  await Promise.all(keys.map(k => k !== CACHE_NAME && caches.delete(k)))
+})
 
-const STATIC_ASSETS = [
-  BASE,
-  BASE + 'index.html',
-  BASE + 'manifest.json',
-  BASE + 'css/style.css',
-  BASE + 'js/main.js',
-  BASE + 'js/main-sw.js',
-  BASE + 'js/pwa-handler.js',
-  BASE + 'images/fav.svg'
-]
 
-// INSTALL
+//__WB_MANIFEST will be substituted by Vite automatically
 self.addEventListener('install', event => {
-  self.skipWaiting()
-
   event.waitUntil(
-    caches.open(CACHE_NAME).then(async cache => {
-      for (const asset of STATIC_ASSETS) {
-        try {
-          await cache.add(asset)
-        } catch (e) {
-          console.warn('SW cache skip:', asset)
-        }
-      }
-    })
+    caches.open(CACHE_NAME).then(cache =>
+      cache.addAll(self.__WB_MANIFEST.map(e => e.url))
+    )
   )
 })
 
-// ACTIVATE
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(
-        keys
-          .filter(k => k !== CACHE_NAME)
-          .map(k => caches.delete(k))
-      )
-    ).then(() => self.clients.claim())
-  )
-})
-
-// FETCH
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return
 
-  // не кэшируем аудио-стрим
+  // не кэшируем стрим
   if (event.request.destination === 'audio') return
 
   const isNavigation =
@@ -62,11 +36,9 @@ self.addEventListener('fetch', event => {
   )
 })
 
-// STRATEGIES
 async function cacheFirst(request) {
   const cache = await caches.open(CACHE_NAME)
   const cached = await cache.match(request)
-
   if (cached) return cached
 
   const fresh = await fetch(request)

@@ -36,6 +36,7 @@
 
         devDependencies:
         + vite 7.2.7
+        + vite-plugin-pwa 1.2.0
         + vite-plugin-static-copy 3.1.4
 
     - if you need - change file - vite.config.js
@@ -47,7 +48,8 @@ If will be error:
 - remove folder node_modules
 - pnpm install
 - pnpm install tailwindcss @tailwindcss/vite
-- pnpm install vite-plugin-static-copy --save-dev
+- pnpm install vite-plugin-static-copy --save-dev   
+- pnpm install vite-plugin-pwa -D
 - pnpm run dev   
 ```
 
@@ -68,5 +70,18 @@ PS:
 ... Do not delete @import "tailwindcss" in `input.css` in `src/css/` folder.  
 ... Do not delete - import `../css/style` in `main.js` in `src/js/` folder.   
 ... manifest.json will be in one level with index.html
+
+#### project structure   
+
+project/
+├─ manifest.json
+├─ service-worker.js     ← custom SW (injectManifest)
+├─ src/
+│  ├─ index.html
+│  ├─ js/   
+│  ├─ fonts/
+│  ├─ css/
+│  └─ images/
+├─ vite.config.js
 
 Have fun!
