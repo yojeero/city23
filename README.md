@@ -66,6 +66,7 @@ After making changes in PWA - save and run
 PS:   
 
 ... Do not delete @import "tailwindcss" in `input.css` in `src/css/` folder.  
-... Do not delete - import `../css/style` in `main.js` in `src/js/` folder.
+... Do not delete - import `../css/style` in `main.js` in `src/js/` folder.   
+... manifest.json will be in one level with index.html
 
 Have fun!
