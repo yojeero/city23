@@ -15,8 +15,7 @@ export default defineConfig({
         { src: 'images/icons', dest: 'images' },
         { src: 'js/pwa-handler.js', dest: 'js' },
         { src: 'js/main-sw.js', dest: 'js' },
-        { src: 'service-worker.js', dest: '' },
-        { src: 'manifest.json', dest: '' }
+        { src: 'service-worker.js', dest: '' }
       ]
     }),
 

@@ -1,69 +1,77 @@
-const CACHE_NAME = 'my-cache-v1'
-const META_CACHE = 'my-cache-meta-v1'
-const MAX_CACHE_AGE = 24 * 60 * 60 * 1000
+const CACHE_NAME = 'city23-cache-v1'
+
+const BASE = self.location.origin +
+  self.location.pathname.replace(/[^/]+$/, '')
 
 const STATIC_ASSETS = [
-  './',
-  './index.html',
-  './css/style.css',
-  './js/main-sw.js',
-  './js/pwa-handler.js',
-  './images/fav.svg'
+  BASE,
+  BASE + 'index.html',
+  BASE + 'manifest.json',
+  BASE + 'css/style.css',
+  BASE + 'js/main.js',
+  BASE + 'js/main-sw.js',
+  BASE + 'js/pwa-handler.js',
+  BASE + 'images/fav.svg'
 ]
 
+// INSTALL
 self.addEventListener('install', event => {
   self.skipWaiting()
 
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache =>
-      Promise.allSettled(
-        STATIC_ASSETS.map(asset => cache.add(asset))
-      )
-    )
+    caches.open(CACHE_NAME).then(async cache => {
+      for (const asset of STATIC_ASSETS) {
+        try {
+          await cache.add(asset)
+        } catch (e) {
+          console.warn('SW cache skip:', asset)
+        }
+      }
+    })
   )
 })
 
+// ACTIVATE
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
       Promise.all(
         keys
-          .filter(k => ![CACHE_NAME, META_CACHE].includes(k))
+          .filter(k => k !== CACHE_NAME)
           .map(k => caches.delete(k))
       )
     ).then(() => self.clients.claim())
   )
 })
 
+// FETCH
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return
 
-  const isApi =
-    event.request.url.includes('/api/') ||
-    event.request.url.includes('/dynamic/')
+  // не кэшируем аудио-стрим
+  if (event.request.destination === 'audio') return
+
+  const isNavigation =
+    event.request.mode === 'navigate' ||
+    event.request.destination === 'document'
 
   event.respondWith(
-    isApi
+    isNavigation
       ? networkFirst(event.request)
       : cacheFirst(event.request)
   )
 })
 
+// STRATEGIES
 async function cacheFirst(request) {
   const cache = await caches.open(CACHE_NAME)
   const cached = await cache.match(request)
 
-  if (cached && !(await isCacheStale(request.url))) {
-    return cached
-  }
+  if (cached) return cached
 
-  try {
-    const fresh = await fetch(request)
-    await addTimestampToCacheEntry(request, fresh)
-    return fresh
-  } catch {
-    return cached || Response.error()
-  }
+  const fresh = await fetch(request)
+  cache.put(request, fresh.clone())
+  return fresh
 }
 
 async function networkFirst(request) {
@@ -71,30 +79,9 @@ async function networkFirst(request) {
 
   try {
     const fresh = await fetch(request)
-    await addTimestampToCacheEntry(request, fresh)
+    cache.put(request, fresh.clone())
     return fresh
   } catch {
     return cache.match(request)
   }
-}
-
-async function addTimestampToCacheEntry(request, response) {
-  const cache = await caches.open(CACHE_NAME)
-  const meta = await caches.open(META_CACHE)
-
-  await meta.put(
-    request.url,
-    new Response(JSON.stringify({ timestamp: Date.now() }))
-  )
-
-  await cache.put(request, response.clone())
-}
-
-async function isCacheStale(url) {
-  const meta = await caches.open(META_CACHE)
-  const res = await meta.match(url)
-  if (!res) return true
-
-  const { timestamp } = await res.json()
-  return Date.now() - timestamp > MAX_CACHE_AGE
 }
