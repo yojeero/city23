@@ -1,9 +1,9 @@
 {
   "name": "city23 FM",
   "short_name": "city23",
-  "start_url": "./index.html",
+  "start_url": "/index.html",
   "display": "standalone",
-  "theme_color": "#fffffff",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "icons": [       
     {
