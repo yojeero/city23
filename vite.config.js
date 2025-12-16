@@ -12,6 +12,7 @@ export default defineConfig({
     viteStaticCopy({
       apply: 'build',
       targets: [
+        { src: 'images/icons', dest: 'images' },
         { src: 'js/pwa-handler.js', dest: 'js' },
         { src: 'js/main-sw.js', dest: 'js' },
         { src: 'service-worker.js', dest: '' },
@@ -52,19 +53,12 @@ export default defineConfig({
         assetFileNames: ({ name }) => {
           if (!name) return 'assets/[hash][extname]'
           if (name.endsWith('.css')) return 'css/style.[ext]'
-
           if (/\.(png|jpe?g|gif|svg|webp|avif)$/.test(name))
-            return 'images/[name].[ext]'
-
-          if (/\.(png|jpe?g|gif|svg|webp|avif)$/.test(name))
-            return 'images/icons/[name].[ext]'
-
+            return 'images/[name].[ext]'   
           if (/\.(woff2?|eot|ttf|otf)$/.test(name))
             return 'fonts/[name].[ext]'
-
           if (/\.(mp4|webm|ogg|mp3|wav|flac|aac)$/.test(name))
             return 'media/[name].[ext]'
-
           return 'assets/[name].[ext]'
         }
       }

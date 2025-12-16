@@ -42,6 +42,15 @@
     - pnpm run dev
 ``` 
 
+If will be error:   
+```
+- remove folder node_modules
+- pnpm install
+- pnpm install tailwindcss @tailwindcss/vite
+- pnpm install vite-plugin-static-copy --save-dev
+- pnpm run dev   
+```
+
 Now in terminal will be link for open project in Live Server   
 
 ... Like this ➜ Local: http://localhost:5173/   
