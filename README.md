@@ -12,13 +12,6 @@
 - Inline SVG icons 
 - Local Google Fonts
 
-#### Project structure
-
-- `scr` folder for development
-- `public` folder for production deploy
-- `preview` for look
-- `city23_app_icons` for PWA icons rebuild in TIFF layers
-
 #### Build and deploy
 
 - used Tailwind v4 + Vite + pnpm
