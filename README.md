@@ -41,7 +41,7 @@
 
 Now in terminal will be link for open project in Live Server   
 
-... Like this ➜ Local: http://localhost:5173/
+... Like this ➜ Local: http://localhost:5173/   
 ... Hold down the left CTRL + click on Link (http://localhost:5173/ or any other)
 
 After making changes in PWA - save and run
