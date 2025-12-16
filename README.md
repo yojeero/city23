@@ -2,6 +2,7 @@
 
 #### [city23 FM](https://city23fm.vercel.app/) - Radio app
 
+- Vercel deploy ready
 - PWA app
 - 100% Responsive Design
 - Tailwind CSS v4
