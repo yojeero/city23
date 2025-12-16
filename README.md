@@ -66,15 +66,15 @@ PS:
 
 #### project structure   
 
-project/
-├─ manifest.json
-├─ service-worker.js     ← custom SW (injectManifest)
-├─ src/
-│  ├─ index.html
-│  ├─ js/   
-│  ├─ fonts/
-│  ├─ css/
-│  └─ images/
-├─ vite.config.js
+project/   
+├─ manifest.json   
+├─ service-worker.js     ← custom SW (injectManifest)   
+├─ src/   
+│  ├─ index.html   
+│  ├─ js/      
+│  ├─ fonts/   
+│  ├─ css/   
+│  └─ images/   
+├─ vite.config.js   
 
 Have fun!
