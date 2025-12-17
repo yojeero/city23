@@ -1,23 +1,16 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>city23 fm</title>
-    
-  <meta name="keywords"
-    content="City23, chillout, lounge, Pop, Disco, digital radio, online, Vienna, online radio">
-  
+  <meta name="keywords" content="City23, chillout, lounge, Pop, Disco, digital radio, online, Vienna, online radio">
   <meta name="description" content="city23 Radio">
-  
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
+  <!-- absolute paths for PWA compatibility -->
   <link rel="icon" href="images/fav.svg" type="svg+xml" sizes="any">
-  <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png"> 
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png"> 
 
   <!-- for PWA -->
   <link rel="manifest" href="manifest.json" />
@@ -25,7 +18,6 @@
   <!-- style CSS -->
   <link rel="stylesheet" href="css/input.css">
   <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body class="bg-stone-100 city city-mob">
@@ -36,109 +28,94 @@
     after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:content-[''] after:animate-[prog_6s_ease-in_infinite] after:bg-gray-700"></div>
   </div>  
 
-    <!-- PAGE -->         
-  <main class="grid size-full content-end lg:content-center 
-    lg:justify-self-center"> 
+  <!-- PAGE -->         
+  <main class="grid size-full content-end lg:content-center lg:justify-self-center"> 
 
-  <div class="grid w-full max-w-3xl m-auto place-content-evenly lg:border lg:border-stone-200 lg:rounded-3xl lg:outline-2 lg:outline-white lg:outline-offset-2 lg:outline-solid">    
+    <div class="grid w-full max-w-3xl m-auto place-content-evenly lg:border lg:border-stone-200 lg:rounded-3xl lg:outline-2 lg:outline-white lg:outline-offset-2 lg:outline-solid">    
 
-    <!-- SHOT -->
-    <div class="grid place-content-center overflow-hidden h-full lg:max-h-100 lg:rounded-t-3xl lg:border lg:border-white">   
+      <!-- SHOT -->
+      <div class="grid place-content-center overflow-hidden h-full lg:max-h-100 lg:rounded-t-3xl lg:border lg:border-white">   
+        <!-- Updated to absolute path -->
+        <img class="w-full h-full object-cover" src="images/cup.webp" alt="city23 radio">         
+      </div>
 
-      <img class="w-full h-full object-cover" src="./images/cup.webp" alt="">         
+      <!-- PLAYER -->
+      <div class="grid grid-cols-2 lg:grid-cols-[2fr_2fr_3fr] w-full h-42 lg:rounded-b-3xl ">    
 
-    </div>
-
-    <!-- PLAYER -->
-     <div class="grid grid-cols-2 lg:grid-cols-[2fr_2fr_3fr] w-full h-42 lg:rounded-b-3xl ">    
-
-      <audio id="audio">
-        <source src="https://live.stream.maxfive.com/max5-city23?aggregator=liveradio" type="audio/mp3">
-      </audio>
+        <audio id="audio">
+          <source src="https://live.stream.maxfive.com/max5-city23?aggregator=liveradio" type="audio/mp3">
+        </audio>
 
         <div class="play grid cursor-pointer place-content-center place-items-center text-white transition-all duration-300 ease-in-out bg-teal-500/40 hover:bg-lime-500 hover:shadow-xl border-br rounded-br-3xl border-bl rounded-bl-3xl border-stone-200 outline-1 outline-white outline-offset-3 outline-solid mt-1">   
 
           <div id="playIcon" class="playIcon stopIcon hover:cursor-pointer">
-
             <svg class="w-22 h-22" viewBox="0 0 24 24">
               <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
                 d="M18.89 12.846c-.353 1.343-2.023 2.292-5.364 4.19c-3.23 1.835-4.845 2.752-6.146 2.384a3.25 3.25 0 0 1-1.424-.841C5 17.614 5 15.743 5 12s0-5.614.956-6.579a3.25 3.25 0 0 1 1.424-.84c1.301-.37 2.916.548 6.146 2.383c3.34 1.898 5.011 2.847 5.365 4.19a3.3 3.3 0 0 1 0 1.692"
                 color="currentColor" />
             </svg>            
-          
           </div>
 
-          <div id="stopIcon" class="stopIcon hover:cursor-pointer" 
-          style="display: none;">
-
+          <div id="stopIcon" class="stopIcon hover:cursor-pointer" style="display: none;">
             <svg class="w-22 h-22" viewBox="0 0 24 24">
               <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
                 d="M4 12c0-3.28 0-4.919.814-6.081a4.5 4.5 0 0 1 1.105-1.105C7.08 4 8.72 4 12 4s4.919 0 6.081.814a4.5 4.5 0 0 1 1.105 1.105C20 7.08 20 8.72 20 12s0 4.919-.814 6.081a4.5 4.5 0 0 1-1.105 1.105C16.92 20 15.28 20 12 20s-4.919 0-6.081-.814a4.5 4.5 0 0 1-1.105-1.105C4 16.92 4 15.28 4 12"
                 color="currentColor" />
             </svg>
-  
           </div>
-
-          </div>     
+        </div>     
             
-          <div id="waveIcon" class="grid pointer-events-none place-content-center place-items-center text-slate-600">
-
-            <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 10v3">
-                <animate attributeName="d" values="M2 10v3; M2 5v13; M2 10v3" dur="1s" repeatCount="indefinite" begin="click" />
-              </path>
-              <path d="M6 6v11">
-                <animate attributeName="d" values="M6 6v11; M6 3v18; M6 6v11" dur="1s" repeatCount="indefinite" begin="click" />
-              </path>
-              <path d="M10 3v18">
-                <animate attributeName="d" values="M10 3v18; M10 8v7; M10 3v18" dur="1s" repeatCount="indefinite" begin="click" />
-              </path>
-              <path d="M14 8v7">
-                <animate attributeName="d" values="M14 8v7; M14 5v13; M14 8v7" dur="1s" repeatCount="indefinite" begin="click" />
-              </path>
-              <path d="M18 5v13">
-                <animate attributeName="d" values="M18 5v13; M18 10v3; M18 5v13" dur="1s" repeatCount="indefinite" begin="click" />
-              </path>
-              <path d="M22 10v3">
-                <animate attributeName="d" values="M22 10v3; M22 6v11; M22 10v3" dur="1s" repeatCount="indefinite" begin="click" />
-              </path>
-            </svg>
-
-          </div>
+        <div id="waveIcon" class="grid pointer-events-none place-content-center place-items-center text-slate-600">
+          <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 10v3">
+              <animate attributeName="d" values="M2 10v3; M2 5v13; M2 10v3" dur="1s" repeatCount="indefinite" begin="click" />
+            </path>
+            <path d="M6 6v11">
+              <animate attributeName="d" values="M6 6v11; M6 3v18; M6 6v11" dur="1s" repeatCount="indefinite" begin="click" />
+            </path>
+            <path d="M10 3v18">
+              <animate attributeName="d" values="M10 3v18; M10 8v7; M10 3v18" dur="1s" repeatCount="indefinite" begin="click" />
+            </path>
+            <path d="M14 8v7">
+              <animate attributeName="d" values="M14 8v7; M14 5v13; M14 8v7" dur="1s" repeatCount="indefinite" begin="click" />
+            </path>
+            <path d="M18 5v13">
+              <animate attributeName="d" values="M18 5v13; M18 10v3; M18 5v13" dur="1s" repeatCount="indefinite" begin="click" />
+            </path>
+            <path d="M22 10v3">
+              <animate attributeName="d" values="M22 10v3; M22 6v11; M22 10v3" dur="1s" repeatCount="indefinite" begin="click" />
+            </path>
+          </svg>
+        </div>
     
-          <div class="text-slate-700 lg:grid hidden pointer-events-none place-content-center">
+        <div class="text-slate-700 lg:grid hidden pointer-events-none place-content-center">
+          <h3 class="p-0 m-0 text-lg leading-none tracking-widest uppercase">CITY23</h3>
+          <p class="p-0 m-0 text-lg leading-none tracking-widest capitalize">premium radio</p>
+        </div>
 
-            <h3 class="p-0 m-0 text-lg leading-none tracking-widest uppercase">CITY23</h3>
-
-            <p class="p-0 m-0 text-lg leading-none tracking-widest capitalize">premium radio</p>
-
-           </div>
-
-       </div><!-- end player -->
+      </div><!-- end player -->
 
     </div><!-- end about -->
 
-    <!-- Add this somewhere visible in your HTML -->
-<button id="install" style="display: none;">Install city23</button>
+    <button id="install" style="display: none;">Install city23</button>
 
- </main>
+  </main>
  
-   <!-- loader hide -->
-   <script>
+  <!-- loader hide -->
+  <script>
     setTimeout(function () {
-     document.querySelector(".loader").style.display = "none";
-     }, 100);
-   </script>  
+      document.querySelector(".loader").style.display = "none";
+    }, 100);
+  </script>  
 
   <!-- vanilla audio player -->
-<script>
-  var audio = document.getElementById("audio"), playIcon = document.getElementById("playIcon"), stopIcon = document.getElementById("stopIcon"), waveIcon = document.getElementById("waveIcon"); playIcon.addEventListener("click", function () { (audio.paused || audio.ended) && (audio.play(), playIcon.style.display = "none", stopIcon.style.display = "block", waveIcon.querySelectorAll("animate").forEach(function (e) { e.beginElement() })) }), stopIcon.addEventListener("click", function () { audio.paused || (audio.pause(), playIcon.style.display = "block", stopIcon.style.display = "none", waveIcon.querySelectorAll("animate").forEach(function (e) { e.endElement() })) });
-</script>
+  <script>
+    var audio = document.getElementById("audio"), playIcon = document.getElementById("playIcon"), stopIcon = document.getElementById("stopIcon"), waveIcon = document.getElementById("waveIcon"); playIcon.addEventListener("click", function () { (audio.paused || audio.ended) && (audio.play(), playIcon.style.display = "none", stopIcon.style.display = "block", waveIcon.querySelectorAll("animate").forEach(function (e) { e.beginElement() })) }), stopIcon.addEventListener("click", function () { audio.paused || (audio.pause(), playIcon.style.display = "block", stopIcon.style.display = "none", waveIcon.querySelectorAll("animate").forEach(function (e) { e.endElement() })) });
+  </script>
 
-<script src="js/main.js"></script>
-<script src="js/main-sw.js"></script>
-<script src="js/pwa-handler.js"></script>
+  <!-- absolute paths -->
+  <script src="js/main-sw.js"></script>
+  <script src="js/pwa-handler.js"></script>
 
 </body>
 </html>
