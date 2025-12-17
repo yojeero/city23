@@ -1,4 +1,4 @@
-<img src="preview/city23.mp4" width="830" >  
+<img src="preview/mob_city23.jpg" width="830" >  
 
 ### [city23 Vienna](https://city23on.vercel.app/) - radio app
 
