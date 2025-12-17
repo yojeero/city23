@@ -1,8 +1,8 @@
 <img src="preview/img.jpg" width="830" >  
 
-### [city23 Vienna](https://city23on.vercel.app/) - Radio app
+### [city23 Vienna](https://city23on.vercel.app/) - radio app
 
-- PWA app
+- pwa app
 - 100% Responsive Design
 - Tailwind CSS v4
 - HTML5, CSS3
