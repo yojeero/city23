@@ -19,7 +19,7 @@ export default defineConfig({
       ]
     }),
 
-    // 🔹 Clean Vite HTML output
+    // Clean Vite HTML output
     {
       name: 'clean-index-html',
       apply: 'build',
