@@ -25,19 +25,35 @@ if (window.addEventListener && typeof window.beforeinstallprompt !== 'undefined'
     });
 }
 
-if (typeof serviceWorker !== 'undefined') {
-    serviceWorker
-        .register("/service-worker.js")
-        .then((registration) => {
-            console.log("ServiceWorker Registered to the Application!");
-            
-            // Check for updates periodically
-            registration.addEventListener('updatefound', () => {
-                const newWorker = registration.installing;
-                console.log('Service worker update found!');
-                // You could notify the user about the update
+// Register service worker
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker
+            .register('/service-worker.js', { scope: '/' })
+            .then((registration) => {
+                console.log("ServiceWorker Registered to the Application!", registration.scope);
+                
+                // Check for updates periodically
+                registration.addEventListener('updatefound', () => {
+                    const newWorker = registration.installing;
+                    if (newWorker) {
+                        console.log('Service worker update found!');
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                console.log('New service worker available. Refresh to update.');
+                            }
+                        });
+                    }
+                });
+                
+                // Check for updates every hour
+                setInterval(() => {
+                    registration.update();
+                }, 3600000);
+            })
+            .catch((error) => {
+                console.error("Failed to Register the ServiceWorker:", error);
             });
-        })
-        .catch((error) => console.log("Failed to Register the ServiceWorker:", error));
+    });
 }
 
