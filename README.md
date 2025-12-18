@@ -1,4 +1,4 @@
-<img src="preview/city23_7.png" width="48%" height="270"> <img src="preview/city23_8.png" width="34%" height="270">   
+<img src="preview/city23_3.png" width="48%" height="270"> <img src="preview/city23_5.png" width="34%" height="270">   
 
 #### [city23 Vienna](https://city23on.vercel.app/) - radio app
 
