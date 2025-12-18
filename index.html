@@ -2,28 +2,30 @@
 <html lang="en">
 
 <head>
-
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>city23 fm</title>
+
+  <title>city23</title>
+
   <meta name="keywords" content="City23, chillout, lounge, Pop, Disco, digital radio, online, Vienna, online radio">
   <meta name="description" content="city23 Radio">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-  <!-- absolute paths for PWA compatibility -->
+  <!-- PWA icons -->
   <link rel="icon" href="./images/fav.svg" type="svg+xml" sizes="any">
   <link rel="apple-touch-icon" href="./images/apple-touch-icon.png"> 
 
   <!-- style CSS -->  
-<link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
 
-  <!-- for PWA -->
+    <!-- for PWA -->
 <link rel="manifest" href="./manifest.webmanifest">
 <script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script>
 
 </head>
 
-<body class="bg-stone-100 city city-mob">
+<body class="bg-stone-100 city city-mob overflow-hidden h-full">
 
   <!-- LOADER -->
   <div class="loader fixed z-50 top-0 right-0 bottom-0 left-0 flex items-center justify-center m-auto bg-gray-100">
@@ -32,24 +34,24 @@
   </div>  
 
   <!-- PAGE -->         
-  <main class="grid size-full content-end lg:content-center lg:justify-self-center"> 
+  <main class="grid size-full min-h-dvh content-end lg:content-center lg:justify-self-center"> 
 
-    <div class="grid w-full max-w-3xl m-auto place-content-evenly lg:border lg:border-stone-200 lg:rounded-3xl lg:outline-2 lg:outline-white lg:outline-offset-2 lg:outline-solid">    
+    <div class="grid w-full max-w-3xl m-auto place-content-evenly lg:border lg:border-stone-200 lg:rounded-3xl lg:outline-2 lg:outline-stone-50 lg:outline-offset-4 lg:outline-solid">    
 
       <!-- SHOT -->
       <div class="grid place-content-center overflow-hidden h-full lg:max-h-100 lg:rounded-t-3xl lg:border lg:border-white">   
-        <!-- Updated to absolute path -->
+
         <img class="w-full h-full object-cover" src="./images/cup.webp" alt="city23 radio">         
       </div>
 
       <!-- PLAYER -->
-      <div class="grid grid-cols-2 lg:grid-cols-[2fr_2fr_3fr] w-full h-42 lg:rounded-b-3xl ">    
+      <div class="grid grid-cols-2 lg:grid-cols-[2fr_2fr_3fr] w-full h-46 lg:h-42 lg:rounded-b-3xl bg-stone-100">    
 
         <audio id="audio">
           <source src="https://live.stream.maxfive.com/max5-city23?aggregator=liveradio" type="audio/mp3">
         </audio>
 
-        <div class="play grid cursor-pointer place-content-center place-items-center text-white transition-all duration-300 ease-in-out bg-teal-500/40 hover:bg-lime-500 hover:shadow-xl border-br rounded-br-3xl border-bl rounded-bl-3xl border-stone-200 outline-1 outline-white outline-offset-3 outline-solid mt-1">   
+        <div class="play grid cursor-pointer place-content-center place-items-center text-stone-50 transition-all duration-300 ease-in-out bg-lime-600/60 hover:bg-amber-700/40 lg:border-bl lg:rounded-bl-3xl"> 
 
           <div id="playIcon" class="playIcon stopIcon hover:cursor-pointer">
             <svg class="w-22 h-22" viewBox="0 0 24 24">
@@ -68,7 +70,7 @@
           </div>
         </div>     
             
-        <div id="waveIcon" class="grid pointer-events-none place-content-center place-items-center text-slate-600">
+        <div id="waveIcon" class="grid pointer-events-none place-content-center place-items-center text-stone-500">
           <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M2 10v3">
               <animate attributeName="d" values="M2 10v3; M2 5v13; M2 10v3" dur="1s" repeatCount="indefinite" begin="click" />
@@ -91,7 +93,7 @@
           </svg>
         </div>
     
-        <div class="text-slate-700 lg:grid hidden pointer-events-none place-content-center">
+        <div class="text-stone-700 lg:grid hidden pointer-events-none place-content-center">
           <h3 class="p-0 m-0 text-lg leading-none tracking-widest uppercase">CITY23</h3>
           <p class="p-0 m-0 text-lg leading-none tracking-widest capitalize">premium radio</p>
         </div>
