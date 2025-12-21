@@ -4,7 +4,6 @@
 
 - PWA app
 - 100% Responsive
-- Mobile-Friendly
 - Tailwind v4 and Vite
 - HTML5 and CSS
 - Vanilla JS
