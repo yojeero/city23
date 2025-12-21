@@ -1,4 +1,4 @@
-<img src="preview/img.png" width="100%">
+<img src="preview/img.webp">
 
 #### [city23 Vienna](https://city23on.vercel.app/) - radio app
 
