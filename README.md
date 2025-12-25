@@ -1,4 +1,4 @@
-<img src="preview/git.webp">
+<img src="preview/img.webp">
 
 ### [city23 Vienna](https://city23on.vercel.app/) - radio app
 
