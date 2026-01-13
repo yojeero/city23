@@ -1,9 +1,8 @@
 <img src="preview/git.webp">
 
-### [city23](https://city23on.vercel.app/) is a Progressive Web App (PWA) radio app.
+### [city23](https://city23on.vercel.app/) is a PWA radio app.
 
-city23 is a minimal, premium online radio player focused on chillout, lounge, pop, and disco sounds.    
-city23 streams curated music 24/7 via a lightweight, vanilla HTML/CSS/JS player.
+city23 is a minimal, premium online radio player focused on chillout, lounge, pop, and disco sounds and streams music 24/7 via a lightweight, vanilla player.
 
 - Live audio streaming   
 - One‑click play / stop   
