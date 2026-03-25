@@ -4,7 +4,8 @@ window.WaveformVisualizer = (() => {
   const HEIGHT_SCALE = 0.45;
   const PULSE_SPEED = 0.003;
   const PULSE_STRENGTH = 0.15;
-  const barColor = 'rgba(79, 57, 246, 0.8)';
+  // const barColor = 'rgba(178, 178, 178, 0.9)';
+  const barColor = 'rgba(128, 128, 255, 0.8)';
 
   let canvas, ctx;
   let offsets, speeds;

@@ -1,138 +1,62 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta charset="UTF-8">
+  <title>Cafe25</title>
+  <meta name="description" content="city23 web radio playerfrom Vien">
 
-  <!-- viewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="./image/svg+xml" href="./images/fav.svg">
 
-  <!-- description -->
-  <meta name="keywords" content="chillout, Pop, Disco, digital radio, online, online radio">
-  <meta name="description" content="Radio with artist and tracks show">
-
-  <!-- Google Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
-
-  <!-- PWA icons -->
-<meta name="mobile-web-app-capable" content="yes" />
-<meta name="mobile-web-app-status-bar-style" content="white-translucent" />
-<meta name="mobile-web-app-title" content="Cafe 25" />
-
-<meta name="theme-color" content="#ffffff">
-
-<link rel="apple-touch-icon" href="./images/pwa-icons/apple-touch-icon.png" />
-
-<script type="module" src="./js/index.js"></script>
-<script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script>
-<link rel="manifest" href="./manifest.webmanifest">
-
-<!-- fav -->
-  <link rel="icon" href="./images/fav.svg" type="svg+xml" sizes="any">
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap" rel="stylesheet">
 
 <!-- CSS -->
-  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./assets/index.css">
 
 </head>
 
 <body class="loading">
 
-	 	<div class="loader">
-		<svg viewBox="0 0 24 24" fill="currentColor">
-			<style> .spinner_I8Q1 { animation: spinner_qhi1 .75s linear infinite } .spinner_vrS7 { animation-delay: -.375s } @keyframes spinner_qhi1 { 0%, 100% { r: 1.5px } 50% { r: 3px } } </style>
-			<circle class="spinner_I8Q1" cx="4" cy="12" r="1.5" />
-			<circle class="spinner_I8Q1 spinner_vrS7" cx="12" cy="12" r="3" />
-			<circle class="spinner_I8Q1" cx="20" cy="12" r="1.5" />
-		</svg>
-	</div> 
+  <div class="loader">
+    <div class="loader-spinner"></div>
+  </div>
 
-  <div class="app">
+  <div class="pic-bg">
+    <img  src="./images/d4.webp" alt="bg-picture" fetchpriority="high"/>
+  </div>
 
-    <nav class="aside glass">
+    <!-- player -->
+    <div class="player">  
 
-            <div class="logo">
-            
-              <a href="https://cafe25.vercel.app/" target="_blank">
-            
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                  <path fill="currentColor"
-                    d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2m6 10h-4v8a4 4 0 1 1-4-4a3.96 3.96 0 0 1 2 .555V8h6Z" />
-                </svg>                    
-            
-              </a>
-            
-            </div>
+      <!-- 1 -->
+    <div class="content">
 
-        <div class="social">
-
-          <a href="https://youtube.com/" target="_blank">
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-              <path fill="currentColor"
-                d="M39.7 18.6s-.3-2.1-1.2-3c-1.1-1.2-2.4-1.2-3-1.3C31.3 14 25 14 25 14s-6.3 0-10.5.3c-.6.1-1.9.1-3 1.3c-.9.9-1.2 3-1.2 3S10 21 10 23.4v2.2c0 2.4.3 4.9.3 4.9s.3 2.1 1.2 3c1.1 1.2 2.6 1.2 3.3 1.3c2.4.1 10.2.2 10.2.2s6.3 0 10.5-.3c.6-.1 1.9-.1 3-1.3c.9-.9 1.2-3 1.2-3s.3-2.4.3-4.8v-2.2c0-2.4-.3-4.8-.3-4.8m-17.8 9.8V20l8.1 4.2z" />
-            </svg>
-
-          </a>
-
-        <a href="https://soundcloud.com/" target="_blank">        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-            <path fill="currentColor"
-              d="M40 24h-.2c-.9-4.6-5-8-9.8-8c-3.1 0-5.9 1.4-7.7 3.7c-.2.3-.3.6-.3 1.2l-.4 9.1l.4 5.5c0 .3.3.5.5.5H40c3.3 0 6-2.7 6-6s-2.7-6-6-6m-21.1-4c-.3 0-.5.2-.5.5l-.8 9v1l.8 5c0 .3.3.5.6.5h.2c.3 0 .5-.2.6-.5l.8-5c0-.3.1-.7 0-1l-.8-9c0-.3-.3-.5-.5-.5zm-4 1c-.3 0-.5.2-.5.5l-.8 8v1l.8 5c0 .3.3.5.6.5h.2c.3 0 .5-.2.6-.5l.8-5c0-.3.1-.7 0-1l-.8-8c0-.3-.3-.5-.5-.5zM11 24c-.3 0-.5.2-.6.5l-.8 5v1l.8 5c0 .3.3.5.6.5s.5-.2.6-.5l.8-5v-1l-.8-5c-.1-.3-.3-.5-.6-.5m-4-1c-.3 0-.5.2-.6.5l-.9 6v1l.8 5c.2.3.4.5.7.5s.5-.2.6-.5l.8-5c0-.3.1-.7 0-1l-.9-6c0-.3-.2-.5-.5-.5m-3.7 3c-.3 0-.5.2-.6.5l-.6 3c-.1.3-.1.7 0 1l.6 4c.1.3.3.5.6.5s.5-.2.6-.5l.6-4v-1l-.6-3c-.1-.3-.3-.5-.6-.5" />
-          </svg>
-
-        </a>
-
-        <a href="https://web.telegram.org/" target="_blank"> 
-
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-          <path fill="currentColor"
-            d="M37.1 13L9.4 24c-.9.3-.8 1.6.1 1.9l7 2.2l2.8 8.8c.2.7 1.1.9 1.6.4l4.1-3.8l7.8 5.7c.6.4 1.4.1 1.6-.6l5.4-23.2c.3-1.7-1.2-3-2.7-2.4M20.9 29.8L20 35l-2-7.2L37.5 15z" />
-        </svg>
-
-         </a>
-
-        <a href="https://github.com/" target="_blank"> 
-
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-          <path fill="currentColor" fill-rule="evenodd"
-            d="M25 10c-8.3 0-15 6.7-15 15c0 6.6 4.3 12.2 10.3 14.2c.8.1 1-.3 1-.7v-2.6c-4.2.9-5.1-2-5.1-2c-.7-1.7-1.7-2.2-1.7-2.2c-1.4-.9.1-.9.1-.9c1.5.1 2.3 1.5 2.3 1.5c1.3 2.3 3.5 1.6 4.4 1.2c.1-1 .5-1.6 1-2c-3.3-.4-6.8-1.7-6.8-7.4c0-1.6.6-3 1.5-4c-.2-.4-.7-1.9.1-4c0 0 1.3-.4 4.1 1.5c1.2-.3 2.5-.5 3.8-.5s2.6.2 3.8.5c2.9-1.9 4.1-1.5 4.1-1.5c.8 2.1.3 3.6.1 4c1 1 1.5 2.4 1.5 4c0 5.8-3.5 7-6.8 7.4c.5.5 1 1.4 1 2.8v4.1c0 .4.3.9 1 .7c6-2 10.2-7.6 10.2-14.2C40 16.7 33.3 10 25 10"
-            clip-rule="evenodd" />
-        </svg>
-
-         </a>
-
+         <a class="logo" href="https://github.com/yojeero/" target="_blank">
+            <img src="./images/v6.webp" alt="" />
+          </a>    
+    
+        <div class="live-track">       
+          <h2>Playing Tracks</h2>        
+          <div id="trackInfo" class="">Loading...</div>        
         </div>   
+        
+      <div class="cover">
+        <div class="cover-disc"></div>
+      </div>
 
-        <a class="avatar" href="https://github.com/yojeero/" target="_blank">
-          <img  src="./images/v6.webp" alt="" />
-        </a>
+    </div>
+    
+    <!-- 2 -->
+         <div class="audio-controls">
 
-      </nav>
-
-     <!-- audio -->
-    <aside class="card glass">        
-  
-    <audio id="city23Audio" preload="auto" crossOrigin="anonymous">
-      <source src="https://live.stream.maxfive.com/max5-city23" type="audio/mpeg">
-    </audio>
-     
-        <div class="live-track"> 
-          
-          <h3>Premium Radio</h3>
-
-          <h5>city
-            <a href="https://www.city23.at/" target="_blank">
-              <span>23</span>
-            </a>
-          </h5>
-
-        </div>
-          
-          <div class="audio-wrap">
+          <audio id="city23Audio" preload="auto" crossOrigin="anonymous">
+            <source src="https://live.stream.maxfive.com/max5-city23" type="audio/mpeg">
+          </audio>
 
             <div id="audioBtn" class="play-toggle">
 
@@ -154,54 +78,17 @@
               </div>
           
             </div>
+
+                <div class="canvas-wrap">
+                  <canvas id="visualizer" class="canvas"></canvas>
+                </div>
+
           </div>
-         
-        <div class="live-track">
-        
-          <p>Playing Tracks</p>        
-          <div id="trackInfo" class="">Loading...</div>
-        
-        </div>
-        
-        <div class="canvas-wrap">          
-            <canvas id="visualizer" class="canvas"></canvas>
-        </div>
-
-    </aside>
-    
-    <main class="hero">  
-
-        <img src="./images/v3.webp" alt="" /> 
-
-                <!-- youtube -->
-<div class="video-btn">
-
-  <div class="icon-play">
-    <svg viewBox="0 0 24 24">
-      <path fill="currentColor"
-        d="m12.503 7.01l-.066-.04c-.748-.455-1.406-.856-1.97-1.058a2.4 2.4 0 0 0-.976-.157a1.8 1.8 0 0 0-.963.37c-.579.434-.829 1.073-.966 1.78c-.133.685-.184 1.577-.247 2.663l-.003.056c-.038.65-.062 1.293-.062 1.876s.024 1.227.062 1.877l.003.055c.063 1.086.114 1.978.247 2.662c.137.708.387 1.346.966 1.781c.286.215.607.343.963.37c.342.025.67-.047.976-.157c.564-.202 1.222-.603 1.97-1.057l.066-.04c.426-.26.844-.527 1.217-.79a24 24 0 0 0 1.335-1.022l.05-.041c.764-.623 1.412-1.152 1.86-1.672c.488-.57.785-1.182.785-1.966s-.297-1.397-.786-1.966c-.447-.52-1.095-1.05-1.858-1.672l-.05-.041c-.454-.37-.91-.724-1.336-1.022a23 23 0 0 0-1.217-.79" />
-    </svg>
+  
   </div>
 
-  <div class="icon-stop">
-    <svg viewBox="0 0 24 24">
-      <path fill="currentColor"
-        d="M11.945 5.75c-1.367 0-2.47 0-3.337.117c-.9.12-1.658.38-2.26.981c-.602.602-.86 1.36-.981 2.26c-.117.867-.117 1.97-.117 3.337v.11c0 1.367 0 2.47.117 3.337c.12.9.38 1.658.981 2.26c.602.602 1.36.86 2.26.982c.867.116 1.97.116 3.337.116h.11c1.367 0 2.47 0 3.337-.116c.9-.122 1.658-.38 2.26-.982s.86-1.36.982-2.26c.116-.867.116-1.97.116-3.337v-.11c0-1.367 0-2.47-.116-3.337c-.122-.9-.38-1.658-.982-2.26s-1.36-.86-2.26-.981c-.867-.117-1.97-.117-3.337-.117z" />
-    </svg>
-  </div>
-
-</div>    
-      
-        <div id="heroYoutube"></div>     
-
-    </main>
-
-  </div>
-
-<!-- JS -->
-
-  <!-- loader hide --> 
-<script>
+  <!-- loader hide -->
+  <script>
   window.addEventListener("load", () => {
     const loader = document.querySelector(".loader");
     if (!loader) return;
@@ -211,19 +98,43 @@
 
     setTimeout(() => loader.remove(), 300);
   });
-</script>
+  </script> 
 
+    <!-- App -->
 <script src="./js/wave.js"></script>
 <script src="./js/player.js"></script>
-<script src="./js/youtube.js" defer></script>
-<script src="./js/app.js" defer></script>
 
-  <!-- PWA install floating button -->
-<button id="installBtn" style="display:none;">
-  <svg viewBox="0 0 24 24">
-    <path fill="#ffffff" d="M9 20v-2H4.616q-.691 0-1.153-.462T3 16.384V5.616q0-.691.463-1.153T4.615 4h7.308v1H4.616q-.231 0-.424.192T4 5.616v10.769q0 .23.192.423t.423.192h14.77q.23 0 .423-.192t.192-.423V14.5h1v1.885q0 .69-.462 1.152T19.385 18H15v2zm7.846-6.75L12.54 8.942l.688-.688l3.12 3.113V4h1v7.367l3.119-3.113l.688.688z"/>
-  </svg>
-</button>
+<!-- vynil spin -->
+<script>
+const audioBtn = document.getElementById('audioBtn');
+const audioCover = document.querySelector('.cover-disc');
+
+let rotation = 0;       
+let speed = 0;          
+let targetSpeed = 0;   
+let animFrame = null;
+
+function rotateVinyl() {
+  rotation += speed;
+
+  audioCover.style.setProperty('--vinyl-rotation', `${rotation}deg`);
+
+  speed += (targetSpeed - speed) * 0.05;
+
+  animFrame = requestAnimationFrame(rotateVinyl);
+}
+
+audioBtn.addEventListener('click', () => {
+  audioBtn.classList.toggle('is-playing');
+
+  if (audioBtn.classList.contains('is-playing')) {
+    targetSpeed = 1.4; 
+    if (!animFrame) rotateVinyl();
+  } else {
+    targetSpeed = 0; 
+  }
+});
+</script>
 
 </body>
 </html>
